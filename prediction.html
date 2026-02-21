@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Result...</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            box-sizing: :border-box;
+        }
+
+        body {
+
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+
+            overflow: hidden;
+            background-color: rgb(202, 40, 40);
+            padding: 20px 10px;
+        }
+
+        .header a {
+
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .header a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .header-center {
+            float: right;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+
+        div {
+
+            padding: auto;
+        }
+
+        h1 {
+
+            text-align: center;
+
+        }
+
+        input {
+
+            align: center;
+
+        }
+        img {
+
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="/" class="logo">Hemorrhage Detection in CT Scans using Deep Learning</a>
+
+        <div class="header-center">
+            <a class="active" href="/">Home</a>
+            <a href="/project_details">Project Details</a>
+        </div>
+    </div>
+    {% if data == "problem" %}
+      <h1>You have chances of geeting Hemorrhage</h1><br>
+      <a href="/project_details"><h1>click Here to know the Details of project</h1></a>
+      
+    
+  {% else %}
+  <h1>You Free from Hemorrhage</h1>
+  <h1>please maintain the saftey measures and consult Doctor if you have problem</h1>
+  
+  {% endif %}
+    
+    
+    <h1>{{data}}</h1>
+    <img src="{{url_for('load_img')}}" alt='img'>
+    <br><a href="/" class='btn'>go back</a>
+
+</body>
+
+</html>
